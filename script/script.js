@@ -48,6 +48,9 @@ var app = new Vue({
         },
         selectDot(index){
             this.picIndex=index;
+        },
+        stopIdle(){
+            clearInterval(this.id);
         }
     },
     mounted: function(){
