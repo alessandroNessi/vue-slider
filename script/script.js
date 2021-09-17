@@ -1,6 +1,7 @@
 
 var app = new Vue({
     el: '#root',
+    id:'',
     data: {
         picIndex: 0,
         pictures :[
@@ -48,5 +49,12 @@ var app = new Vue({
         selectDot(index){
             this.picIndex=index;
         }
+    },
+    mounted: function(){
+        // this.id=setInterval(function(){
+        //     app.nextImg();
+        //     this.nextImg();
+        // } , 300);
+        this.id=setInterval(()=>this.nextImg(),3000);
     }
 });
