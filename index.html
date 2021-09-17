@@ -13,25 +13,25 @@
     <body>
         <div id="root">
             <header>
-                <h1>BOOLEAN CAROUSEL</h1>
+                <h1>BOOLEAN CAROUSEL{{picIndex}}</h1>
             </header>
             <main>
                 <div class="carousel__container">
                     <div class="arrowPrev">
-                        <i class="fas fa-chevron-left"></i>                    </div>
+                        <i class="fas fa-chevron-left" v-on:click="prevImg"></i>                    </div>
                     <div class="mainImg">
                         <div class="carouselButtons">
                             <i class="fas fa-circle"></i>
                         </div>
-                        <img src="https://i.picsum.photos/id/395/536/354.jpg?hmac=AvFdhapvSH2jATcZEUwVQx6FXvwxnTmonRJtAUjWodE" alt="">
+                        <img :src="pictures[picIndex].url" :alt="pictures[picIndex].name">
                     </div>
                     <div class="arrowNext">
-                        <i class="fas fa-chevron-right"></i>
+                        <i class="fas fa-chevron-right" @click="nextImg"></i>
                     </div>
                 </div>
-            </main>
-            <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-            <script src="script/script.js"></script>
+            </main>    
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="script/script.js"></script>
     </body>
 </html>
