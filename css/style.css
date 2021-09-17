@@ -1,0 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+header h1{
+    text-align: center;
+    line-height: 150px;
+    vertical-align: middle;
+    background-color:burlywood;
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 150px);
+    background-color: rgb(119, 119, 116);
+}
+.carousel__container{
+    width: 800px;
+    display: flex;
+}
+.mainImg{
+    width: 90%;
+}
+.mainImg img{
+    width: 100%;
+}
+.arrowPrev, .arrowNext{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+}
