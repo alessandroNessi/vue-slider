@@ -37,6 +37,16 @@ var app = new Vue({
         },
         prevImg(){
             this.picIndex>0 ? this.picIndex-- : this.picIndex=this.pictures.length-1;
+        },
+        selectedImage(index){
+            if(this.picIndex==index){
+                return "selected";
+            }
+            return "";
+            // picIndex==index ? 'selected': '' 
+        },
+        selectDot(index){
+            this.picIndex=index;
         }
     }
 });

@@ -21,7 +21,7 @@
                         <i class="fas fa-chevron-left" v-on:click="prevImg"></i>                    </div>
                     <div class="mainImg">
                         <div class="carouselButtons">
-                            <i class="fas fa-circle"></i>
+                            <i v-for="(pic, index) in pictures"  :class="selectedImage(index)" class="fas fa-circle" @click="selectDot(index)"></i>
                         </div>
                         <img :src="pictures[picIndex].url" :alt="pictures[picIndex].name">
                     </div>

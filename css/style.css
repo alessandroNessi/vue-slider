@@ -45,3 +45,9 @@ main{
     width: 5%;
     font-size: 40px;
 }
+.selected{
+    color:rgb(100, 100, 255);
+}
+.fas{
+    margin: 0 5px;
+}
