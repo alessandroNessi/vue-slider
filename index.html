@@ -6,27 +6,38 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- font-awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
         <title>Boolean carousel</title>
     </head>
     <body>
         <div id="root">
             <header>
-                <h1>BOOLEAN CAROUSEL{{picIndex}}</h1>
+                <h1>BOOLEAN CAROUSEL</h1>
             </header>
             <main>
+                <div class="background-container">
+                    <img class="background" :src="pictures[picIndex].url">
+                    <div class="overlay"></div>
+                </div>
                 <div class="carousel__container">
                     <div class="arrowPrev">
-                        <i class="fas fa-chevron-left" v-on:click="prevImg"></i>                    </div>
+                        <div class="circle" @click="prevImg(), stopIdle()">
+                            <i class="fas fa-chevron-left" ></i>
+                        </div>
+                    </div>
                     <div class="mainImg">
                         <div class="carouselButtons">
-                            <i v-for="(pic, index) in pictures"  :class="selectedImage(index)" class="fas fa-circle" @click="selectDot(index)"></i>
+                            <i v-for="(pic, index) in pictures"  :class="selectedImage(index)" class="fas fa-circle" @click="selectDot(index), stopIdle()"></i>
                         </div>
                         <img :src="pictures[picIndex].url" :alt="pictures[picIndex].name">
                     </div>
                     <div class="arrowNext">
-                        <i class="fas fa-chevron-right" @click="nextImg"></i>
+                        <div class="circle" @click="nextImg(), stopIdle()">
+                            <i class="fas fa-chevron-right" ></i>
+                        </div>
                     </div>
                 </div>
             </main>    
